@@ -1,37 +1,35 @@
-/* globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --radius: 0.625rem;
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 217.2 91.2% 59.8%;
+  --primary-foreground: 222.2 84% 4.9%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 224.3 76.3% 94.0%;
+  --radius: 0.75rem;
+  --chart-1: 220 70% 50%;
+  --chart-2: 160 60% 45%;
+  --chart-3: 30 80% 55%;
+  --chart-4: 280 65% 60%;
+  --chart-5: 340 75% 55%;
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
@@ -84,9 +82,12 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    border-color: hsl(var(--border));
   }
   body {
     @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
   }
 }
 
@@ -94,58 +95,95 @@
   .text-balance {
     text-wrap: balance;
   }
-
-  /* Custom slate-750 for better hover states */
-  .bg-slate-750 {
-    background-color: rgb(51 65 85);
-  }
-
-  .hover\:bg-slate-750:hover {
-    background-color: rgb(51 65 85);
-  }
 }
 
 /* Enhanced dark theme tab styling */
 [data-state="active"] {
-  background-color: rgb(51 65 85) !important;
-  color: rgb(255 255 255) !important;
+  background-color: oklch(0.269 0 0) !important;
+  color: oklch(0.985 0 0) !important;
 }
 
-/* Remove any sepia or warm tints */
-.bg-slate-800 {
-  background-color: rgb(30 41 59) !important;
+/* Dark theme badge improvements */
+.bg-slate-700\/50 {
+  background-color: rgba(51, 65, 85, 0.5);
 }
 
-.bg-slate-900 {
-  background-color: rgb(15 23 42) !important;
+.border-gray-600 {
+  border-color: oklch(0.439 0 0);
 }
 
-.bg-slate-700 {
-  background-color: rgb(51 65 85) !important;
+.text-gray-300 {
+  color: oklch(0.708 0 0);
 }
 
-.border-slate-700 {
-  border-color: rgb(51 65 85) !important;
+/* Dark theme badge colors */
+.bg-blue-900 {
+  background-color: oklch(0.2 0.1 240);
 }
 
-.border-slate-800 {
-  border-color: rgb(30 41 59) !important;
+.text-blue-200 {
+  color: oklch(0.8 0.1 240);
 }
 
-.text-slate-300 {
-  color: rgb(203 213 225) !important;
+/* Button hover improvements for dark theme */
+.hover\:bg-blue-700:hover {
+  background-color: oklch(0.4 0.15 240);
 }
 
-.text-slate-400 {
-  color: rgb(148 163 184) !important;
+.bg-blue-600 {
+  background-color: oklch(0.5 0.2 240);
 }
 
-.text-slate-500 {
-  color: rgb(100 116 139) !important;
+.bg-green-600 {
+  background-color: oklch(0.5 0.2 120);
 }
 
-.text-white {
-  color: rgb(255 255 255) !important;
+.bg-green-900 {
+  background-color: oklch(0.2 0.1 120);
+}
+
+.text-green-200 {
+  color: oklch(0.8 0.1 120);
+}
+
+.bg-yellow-900 {
+  background-color: oklch(0.2 0.1 60);
+}
+
+.text-yellow-200 {
+  color: oklch(0.8 0.1 60);
+}
+
+.bg-purple-900 {
+  background-color: oklch(0.2 0.1 300);
+}
+
+.text-purple-200 {
+  color: oklch(0.8 0.1 300);
+}
+
+.bg-pink-900 {
+  background-color: oklch(0.2 0.1 330);
+}
+
+.text-pink-200 {
+  color: oklch(0.8 0.1 330);
+}
+
+.bg-indigo-900 {
+  background-color: oklch(0.2 0.1 270);
+}
+
+.text-indigo-200 {
+  color: oklch(0.8 0.1 270);
+}
+
+.bg-emerald-900 {
+  background-color: oklch(0.2 0.1 150);
+}
+
+.text-emerald-200 {
+  color: oklch(0.8 0.1 150);
 }
 
 /* Marquee animation */
@@ -214,6 +252,10 @@
   text-align: center;
   font-size: 0.75rem;
   font-weight: 500;
-  color: rgb(148 163 184);
+  color: oklch(0.708 0 0);
   padding-bottom: 0.5rem;
+}
+
+.bg-slate-750 {
+  background-color: rgb(51 65 85);
 }
