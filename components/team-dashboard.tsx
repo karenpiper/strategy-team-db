@@ -45,6 +45,7 @@ import {
 import { useAirtableUser } from "@/use-airtable-user"
 import { toast } from "sonner"
 import { TeamResources } from "@/components/team-resources"
+import { TeamAvatarGallery } from "@/components/team-avatar-gallery"
 
 // Types for our data
 interface Snap {
@@ -84,6 +85,12 @@ export default function TeamDashboard() {
 
   // Add this inside the component, after the existing state declarations
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([])
+  const [moments, setMoments] = useState([])
+  const [mustReads, setMustReads] = useState([])
+  const [recordings, setRecordings] = useState([])
+  const [bestOfWork, setBestOfWork] = useState([])
+  const [snapsData, setSnapsData] = useState([])
+  const [pipelineData, setPipelineData] = useState([])
 
   // Add this useEffect to fetch team members
   useEffect(() => {
@@ -1120,6 +1127,9 @@ export default function TeamDashboard() {
 
           {/* Team Resources */}
           <TeamResources />
+
+          {/* Team Avatar Gallery */}
+          <TeamAvatarGallery />
         </section>
       </div>
 
